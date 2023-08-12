@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                               child: ListTile(
                                 title:Text(item.brand),
+                                subtitle: Text(item.model),
                                leading:  Container(
                                   width: 50, 
                                   height: 50, 
