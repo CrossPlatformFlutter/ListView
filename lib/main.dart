@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listview/car.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+
+ List<car> cars=[
+  car("Audi","",Image.asset("images/audi.jpg")),
+  car("BMW","",Image.asset("images/bmw.jpg")),
+  car("dmax","",Image.asset("images/dmax.jpg")),
+  car("ferrari","",Image.asset("images/ferrari.jpg")),
+  car("Lamborghini","",Image.asset("images/lamborghini.jpg")),
+  car("Mercedes","",Image.asset("images/mercedes.jpg")),
+  car("Opel Astra","",Image.asset("images/opelAstra.jpg")),
+  car("Tesla","",Image.asset("images/tesla.jpg")),
+  car("Toyouta","",Image.asset("images/toyouta.jpg")),
+ ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
