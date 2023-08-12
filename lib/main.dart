@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -51,8 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("ListView"),),
-      body: ListView.builder(  itemCount: cars.length,
+      appBar: AppBar(title: const Text("CARS",style: TextStyle(color: Colors.white),),backgroundColor: Colors.teal,),
+     body: ListView.builder(  itemCount: cars.length,
+    // body: ListView.separated(
+                          
+                          // separatorBuilder:(context,index)=>const Divider(color: Colors.black,),
                             itemBuilder: (context,index){
                               final item=cars[index];
                               return Dismissible(
@@ -69,10 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                    SnackBar(content: Text("${item.brand} Deleted"))
                                 );
                               },
-                              child: ListTile(
+                              child:Card(child: ListTile(
                                 title:Text(item.brand),
                                 subtitle: Text(item.model),
-                               leading:  Container(
+                                leading:  Container(
                                   width: 50, 
                                   height: 50, 
                                   decoration: BoxDecoration(
@@ -85,6 +89,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   child: item.image,
                                 ),
+                                onTap: (){
+                                  showDialog(barrierDismissible: false,context: context, builder: (BuildContext context){
+                                     return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                        title: Text("${item.brand} ${item.model}",style: TextStyle(color: Colors.white),),
+                                        content: item.image,
+                                        actions: [
+                                          ElevatedButton(onPressed: (){Navigator.pop(context);}, child: Text("Close"))
+                                        ],
+                                     );
+                                  });
+                                },
+                              ),
                               ),
                               );
                             },
