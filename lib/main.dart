@@ -43,6 +43,10 @@ class _MyHomePageState extends State<MyHomePage> {
   car("Opel Astra","7",Image.asset("images/opelAstra.jpg")),
   car("Tesla","8",Image.asset("images/tesla.jpg")),
   car("Toyouta","9",Image.asset("images/toyouta.jpg")),
+    car("Mercedes","10",Image.asset("images/mercedes.jpg")),
+  car("Opel Astra","11",Image.asset("images/opelAstra.jpg")),
+  car("Tesla","12",Image.asset("images/tesla.jpg")),
+  car("Toyouta","13",Image.asset("images/toyouta.jpg")),
  ];
   @override
   Widget build(BuildContext context) {
@@ -66,10 +70,24 @@ class _MyHomePageState extends State<MyHomePage> {
                                 );
                               },
                               child: ListTile(
-                                title: Text(item.brand),
-                              ));
+                                title:Text(item.brand),
+                               leading:  Container(
+                                  width: 50, 
+                                  height: 50, 
+                                  decoration: BoxDecoration(
+                                     borderRadius: BorderRadius.circular(25), 
+                                     boxShadow:[
+                                       BoxShadow(
+                                          color: const Color.fromARGB(255, 161, 142, 142),
+                                      )
+                                     ]
+                                  ),
+                                  child: item.image,
+                                ),
+                              ),
+                              );
                             },
                           ),
-    );
+                  );
   }
 }
