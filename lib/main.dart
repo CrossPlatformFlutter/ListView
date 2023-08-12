@@ -53,9 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("CARS",style: TextStyle(color: Colors.white),),backgroundColor: Colors.teal,),
-     body: ListView.builder(  itemCount: cars.length,
+    //  body: ListView.builder(
+    //   itemCount: cars.length,
+    //   itemBuilder: (context,index){
+    //     final item=cars[index];
+    //       return ListTile(
+    //        // title: Text(cars[index].brand),
+    //        title:Text(item.brand)
+    //       );
+    // }),
+      body: ListView.builder(  itemCount: cars.length,
     // body: ListView.separated(
-                          
                           // separatorBuilder:(context,index)=>const Divider(color: Colors.black,),
                             itemBuilder: (context,index){
                               final item=cars[index];
